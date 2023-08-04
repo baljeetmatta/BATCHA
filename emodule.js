@@ -1,10 +1,22 @@
+// const EventEmitter=require("events");
+// const event=new EventEmitter();
+// function log()
+// {
+//     console.log("Log is working...");
+//     event.emit("Done");
+
+// }
+// module.exports.log=log;
+// module.exports.event=event;
 const EventEmitter=require("events");
-const event=new EventEmitter();
-function log()
+class Logger extends EventEmitter
+{
+ log()
 {
     console.log("Log is working...");
-    event.emit("Done");
+    this.emit("Done");
 
 }
-module.exports.log=log;
-module.exports.event=event;
+
+}
+module.exports=Logger;
